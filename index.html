@@ -12,7 +12,7 @@
     <h1 style="margin: 0 0 10px 0; color: #333; font-size: 28px; text-align: center; font-weight: 600;">Crear Cuenta</h1>
     <p style="margin: 0 0 30px 0; color: #666; text-align: center; font-size: 14px;">Complete el formulario para registrarse</p>
     
-    <form action="https://TU-N8N-URL/webhook/registro" method="POST">
+    <form action="https://rocioalvesc.app.n8n.cloud/webhook-test/0860b86d-c019-4d09-af8b-53888148f23a" method="POST" onsubmit="mostrarAlerta(event)">
       
       <div style="margin-bottom: 20px;">
         <label style="display: block; margin-bottom: 8px; color: #333; font-weight: 500; font-size: 14px;">Nombre completo</label>
@@ -41,6 +41,33 @@
     <p style="margin: 20px 0 0 0; text-align: center; color: #999; font-size: 13px;">¿Ya tienes cuenta? <a href="#" style="color: #667eea; text-decoration: none; font-weight: 500;">Iniciar sesión</a></p>
     
   </div>
+
+  <script>
+    function mostrarAlerta(event) {
+      event.preventDefault();
+      
+      // Obtener los datos del formulario
+      const formData = new FormData(event.target);
+      
+      // Enviar los datos
+      fetch(event.target.action, {
+        method: 'POST',
+        body: formData
+      }).then(() => {
+        // Mostrar alerta
+        alert('Registro en proceso. Recibirás la información a tu correo.');
+        
+        // Limpiar el formulario
+        event.target.reset();
+        
+        // Opcional: si quieres recargar la página después
+        // window.location.reload();
+      }).catch(error => {
+        alert('Registro en proceso. Recibirás la información a tu correo.');
+        event.target.reset();
+      });
+    }
+  </script>
 
 </body>
 </html>
