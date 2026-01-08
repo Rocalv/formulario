@@ -16,27 +16,28 @@
       
       <div style="margin-bottom: 20px;">
         <label style="display: block; margin-bottom: 8px; color: #333; font-weight: 500; font-size: 14px;">Nombre completo</label>
-        <input type="text" name="nombre" required style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; box-sizing: border-box; transition: border-color 0.3s; outline: none;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
+        <input type="text" name="nombre" required minlength="3" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; box-sizing: border-box; transition: border-color 0.3s; outline: none;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'" placeholder="Ingresa tu nombre completo">
       </div>
 
       <div style="margin-bottom: 20px;">
         <label style="display: block; margin-bottom: 8px; color: #333; font-weight: 500; font-size: 14px;">Correo electrónico</label>
-        <input type="email" name="correo" required style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; box-sizing: border-box; transition: border-color 0.3s; outline: none;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
+        <input type="email" name="correo" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; box-sizing: border-box; transition: border-color 0.3s; outline: none;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'" title="Ingresa un correo válido (ejemplo@correo.com)">
       </div>
 
       <div style="margin-bottom: 20px;">
         <label style="display: block; margin-bottom: 8px; color: #333; font-weight: 500; font-size: 14px;">DNI</label>
-        <input type="text" name="dni" required style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; box-sizing: border-box; transition: border-color 0.3s; outline: none;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
+        <input type="text" name="dni" required pattern="[0-9]{8}" maxlength="8" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; box-sizing: border-box; transition: border-color 0.3s; outline: none;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'" title="El DNI debe tener exactamente 8 dígitos" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
       </div>
 
       <div style="margin-bottom: 25px;">
         <label style="display: block; margin-bottom: 8px; color: #333; font-weight: 500; font-size: 14px;">Contraseña</label>
-        <input type="password" name="contrasena" required style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; box-sizing: border-box; transition: border-color 0.3s; outline: none;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
+        <input type="password" name="contrasena" required minlength="6" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; box-sizing: border-box; transition: border-color 0.3s; outline: none;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'" title="La contraseña debe tener al menos 6 caracteres">
       </div>
 
       <button type="submit" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(102,126,234,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">Registrarse</button>
     
     </form>
+
   </div>
 
   <script>
@@ -68,4 +69,3 @@
 
 </body>
 </html>
-
